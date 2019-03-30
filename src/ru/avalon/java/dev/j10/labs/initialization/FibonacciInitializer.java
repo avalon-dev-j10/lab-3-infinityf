@@ -19,6 +19,10 @@ import ru.avalon.java.dev.j10.labs.Initializer;
  * @see <a href="https://ru.wikipedia.org/wiki/%D0%A7%D0%B8%D1%81%D0%BB%D0%B0_%D0%A4%D0%B8%D0%B1%D0%BE%D0%BD%D0%B0%D1%87%D1%87%D0%B8">Числа Фибоначчи</a>
  */
 public class FibonacciInitializer implements Initializer {
+    public FibonacciInitializer(int num)
+    {
+        m_size = num;
+    }
 
     /**
      * Выполняет инициализацию массива значениями
@@ -30,5 +34,12 @@ public class FibonacciInitializer implements Initializer {
         /*
          * TODO(Студент): Реализовать метод initialize класса FibonacciInitializer
          */
+        array[0] = 0;
+        array[1] = 1;
+        for (int i = 2; i < m_size; i++) {
+            array[i] = array[i-2] + array[i-1];
+        }
     }
+    private
+        int m_size;
 }
